@@ -75,6 +75,8 @@ gdp_data<-WDI(
 
 write.csv(gdp_data, 'raw_data/gdp_data.csv')
 
+# Population in 2020
+
 pop_data<-WDI(
   country = "all",
   indicator = "SP.POP.TOTL",
