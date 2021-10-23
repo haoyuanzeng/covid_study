@@ -1,8 +1,0 @@
-The package "democracyData" is only available on Github for now. Install as follows:
-remotes::install_github("xmarquez/democracyData")
-
-install.packages('jsonlite')
-
-# World Development Indicators (World Bank)
-
-install.packages('WDI')

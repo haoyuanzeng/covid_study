@@ -35,11 +35,9 @@ for(i in 1:length(json_data$resources$datahub$type)){
 }
 
 
-# Download covid data from WHO --------------------------------------------
-
-download.file(url = 'https://covid19.who.int/WHO-COVID-19-global-table-data.csv',
-              destfile = 'raw_data/covid_data.csv')
-
+# Download covid data from our world in data (with country code) --------------------------------------------
+download.file(url = 'https://github.com/owid/covid-19-data/raw/master/public/data/latest/owid-covid-latest.xlsx',
+              destfile = 'raw_data/covid_data.xlsx')
 
 # Download culture data ---------------------------------------------------
 
@@ -49,7 +47,9 @@ download.file(url = 'http://geerthofstede.com/wp-content/uploads/2016/08/6-dimen
 
 # Download institutional data ---------------------------------------------
 
-# remotes::install_github("xmarquez/democracyData")
+# demovracy: use polity 5 data
+download.file(url = 'http://www.systemicpeace.org/inscr/p5v2018.xls',
+              destfile = 'raw_data/polity5.xls')
 
 
 # Download state capacity data --------------------------------------------
@@ -57,36 +57,6 @@ download.file(url = 'http://geerthofstede.com/wp-content/uploads/2016/08/6-dimen
 download.file(url = 'https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/NRR7MB/6DC2YR',
               destfile = 'raw_data/state_capacity.tab')
 
-# Download country-specific basic information ---------------------------------------------
 
-library(WDI)
 
-# GDP per capita in 2020 (measured in constant 2010 US$)
-gdp_data<-WDI(
-  country = "all",
-  indicator = "NY.GDP.PCAP.KD",
-  start = 2020,
-  end = 2020,
-  extra = FALSE,
-  cache = NULL,
-  latest = NULL,
-  language = "en"
-)
-
-write.csv(gdp_data, 'raw_data/gdp_data.csv')
-
-# Population in 2020
-
-pop_data<-WDI(
-  country = "all",
-  indicator = "SP.POP.TOTL",
-  start = 2020,
-  end = 2020,
-  extra = FALSE,
-  cache = NULL,
-  latest = NULL,
-  language = "en"
-)
-
-write.csv(gdp_data, 'raw_data/pop_data.csv')
 
