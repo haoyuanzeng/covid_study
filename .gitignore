@@ -3,3 +3,5 @@ data/
 figures_tables/
 regression_results/
 .Renviron
+.snakemake
+dag.png

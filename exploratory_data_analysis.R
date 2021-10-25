@@ -23,19 +23,19 @@ ggsave('figures_tables/countries_by_continent.png',plot = g1, width = 8, height 
 # covid information by continent
 library(vtable)
 sub1 <- subset(data, select = c("continent","total_cases_per_million","positive_rate","people_fully_vaccinated_per_hundred"))
-st(sub1, group='continent', group.long = TRUE, title = 'Covid by continent', file='figures_tables/covid_cont.html')
+st(sub1, group='continent', group.long = TRUE, title = 'Covid by continent', out = FALSE, file='figures_tables/covid_cont.html')
 
 # individualsm vs. collectivism by continent
 sub2 <- subset(data, select = c("continent", "idv"))
-st(sub2, group='continent', group.long = TRUE, title = 'Culture by continent', file='figures_tables/culture_cont.html')
+st(sub2, group='continent', group.long = TRUE, title = 'Culture by continent', out = FALSE, file='figures_tables/culture_cont.html')
 
 # democracy by continent
 sub3 <- subset(data, select = c("continent", "democ", "polity2"))
-st(sub3, group='continent', group.long = TRUE, title = 'Democracy by continent', file='figures_tables/demo_cont.html')
+st(sub3, group='continent', group.long = TRUE, title = 'Democracy by continent', out = FALSE, file='figures_tables/demo_cont.html')
 
 # state capacity by continent
 sub4 <- subset(data, select = c("continent", "ape", "rpe", "rpr"))
-st(sub4, group='continent', group.long = TRUE, title = 'State capacity by continent', file='figures_tables/capacity_cont.html')
+st(sub4, group='continent', group.long = TRUE, title = 'State capacity by continent', out = FALSE, file='figures_tables/capacity_cont.html')
 
 
 # correlation plots----------------------------------------
