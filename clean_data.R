@@ -81,19 +81,16 @@ capacity2 <- subset(capacity2, select = c("ISO3", "country", "year", "ape1","rpe
 # ape1: Absolute Political Extraction, an absolute measure of the extractive capacity of governments.APE uses Stochastic Frontier Analysis to directly measure the extractive capacity of nations.
 # rpegdp: relative Political Extraction, RPE approximates the ability of governments to appropriate portions of the national output to advance public goals.
 # rprwork: RPR gauges the capacity of governments to mobilize populations under their control.
-# rpafull: Relative Political Allocation is a composite indicator to measure how public expenditures are prioritized in the government budget, RPA measures the gaps between the actual percentage distribution of general government outlays and what the estimated percentages of the “best” expenditure portfolio to allocate to each functional area to maximize the living standards of the population. 
 # calculate five-year average
 capacity_sum <- capacity2 %>% 
   group_by(country, ISO3) %>% 
   summarize(mean(ape1,na.rm = TRUE), 
             mean(rpegdp,na.rm = TRUE), 
-            mean(rprwork,na.rm = TRUE), 
-            mean(rpafull,na.rm = TRUE))
+            mean(rprwork,na.rm = TRUE))
 capacity_sum <- rename(capacity_sum, 
                        ape = "mean(ape1, na.rm = TRUE)", 
                        rpe = "mean(rpegdp, na.rm = TRUE)", 
                        rpr = "mean(rprwork, na.rm = TRUE)", 
-                       rpa = "mean(rpafull, na.rm = TRUE)", 
                        iso_code = ISO3)
 
 
@@ -104,5 +101,10 @@ covid_analysis <- covid2 %>%
   left_join(culture2, by = c("location" = "country")) %>% 
   left_join(capacity_sum, by = "iso_code")
 
-write.csv(covid_analysis, 'data/covid_analysis.csv')
+# drop useless var and rename
+covid_analysis2 <- select(covid_analysis, -starts_with("iso"),-"country")
+covid_analysis2 <- rename(covid_analysis2, country = location)
+
+# save data
+write.csv(covid_analysis2, 'data/covid_analysis.csv')
 
