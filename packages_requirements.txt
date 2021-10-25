@@ -1,0 +1,10 @@
+R packages used in this project are as follows:
+readxl
+dplyr
+readr
+ggplot2
+dplyr
+vtable
+stargazer
+fixest
+modelsummary

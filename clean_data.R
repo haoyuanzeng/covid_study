@@ -65,11 +65,9 @@ demo_sum[demo_sum$iso_code == 'CON','country'] <- 'Congo'
 demo_sum[demo_sum$iso_code == 'ZAI','country'] <- 'Democratic Republic of Congo'
 demo_sum[demo_sum$iso_code == 'SDN','country'] <- 'Sudan'
 demo_sum[demo_sum$iso_code == 'SWA','country'] <- 'Eswatini'
-demo_sum[demo_sum$iso_code == 'SWA','country'] <- 'Eswatini'
-demo_sum[demo_sum$iso_code == 'ETM','country'] <- 'Timor'
 demo_sum[demo_sum$iso_code == 'ETM','country'] <- 'Timor'
 demo_sum[demo_sum$iso_code == 'UAE','country'] <- 'United Arab Emirates'
-demo_sum[demo_sum$iso_code == 'MAC','country'] <-'North Macedonia'
+demo_sum[demo_sum$iso_code == 'MAC','country'] <- 'North Macedonia'
 
 
 # read state capacity data

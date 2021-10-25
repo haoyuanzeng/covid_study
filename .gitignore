@@ -1,2 +1,5 @@
 data/
 .DS_Store
+figures_tables/
+regression_results/
+.Renviron
