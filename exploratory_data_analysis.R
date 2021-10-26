@@ -1,7 +1,10 @@
 rm(list=ls())
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(vtable)
 
 # read data ---------------------------------------------------------------
-library(readr)
 data <-  read_delim('data/covid_analysis.csv', col_names = TRUE)
 
 # single variable summary ----------------------------------------------------------
@@ -11,8 +14,7 @@ if(!file.exists("figures_tables")){
 }
 
 # bar graph of number of countries by continent
-library(ggplot2)
-library(dplyr)
+
 g1 <- ggplot(data) +
   geom_bar(aes(x = continent)) +
   labs(y = 'number of countries',
@@ -21,7 +23,7 @@ g1 <- ggplot(data) +
 ggsave('figures_tables/countries_by_continent.png',plot = g1, width = 8, height = 6, dpi = 300)
 
 # covid information by continent
-library(vtable)
+
 sub1 <- subset(data, select = c("continent","total_cases_per_million","positive_rate","people_fully_vaccinated_per_hundred"))
 st(sub1, group='continent', group.long = TRUE, title = 'Covid by continent', out = FALSE, file='figures_tables/covid_cont.html')
 

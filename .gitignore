@@ -5,3 +5,4 @@ regression_results/
 .Renviron
 .snakemake
 dag.png
+.Rhistory

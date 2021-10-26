@@ -15,8 +15,7 @@ covid2 <- subset(covid, select =
                    c("iso_code", "continent", "location", "total_cases",
                      "total_deaths","total_cases_per_million","total_deaths_per_million",
                      "positive_rate","people_fully_vaccinated","people_fully_vaccinated_per_hundred",
-                     "population","population_density","median_age","aged_65_older","gdp_per_capita",
-                     "human_development_index"))
+                     "population","population_density","median_age","aged_65_older","gdp_per_capita"))
 
 
 # read culture data
