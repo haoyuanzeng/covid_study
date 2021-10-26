@@ -16,12 +16,18 @@ rule all:
             'figures_tables/death_age.png', 'figures_tables/demo_cont.html'
         },
         regression_results = {
-            'regression_results/basic_reg.html',
-            'regression_results/democracy_reg.html',
-            'regression_results/individualism_reg.html',
-            'regression_results/polity2_reg.html',
-            'regression_results/rpe_reg.html',
-            'regression_results/rpr_reg.html'
+            'regression_results/fe_basic_reg.html',
+            'regression_results/fe_democracy_reg.html',
+            'regression_results/fe_individualism_reg.html',
+            'regression_results/fe_polity2_reg.html',
+            'regression_results/fe_rpe_reg.html',
+            'regression_results/fe_rpr_reg.html',
+            'regression_results/ols_basic_reg.html',
+            'regression_results/ols_democracy_reg.html',
+            'regression_results/ols_individualism_reg.html',
+            'regression_results/ols_polity2_reg.html',
+            'regression_results/ols_rpe_reg.html',
+            'regression_results/ols_rpr_reg.html',
         },
         fig = 'dag.png'
 
@@ -80,12 +86,18 @@ rule regression:
         clean_data = 'data/covid_analysis.csv'
     output:
         regression_results = {
-            'regression_results/basic_reg.html',
-            'regression_results/democracy_reg.html',
-            'regression_results/individualism_reg.html',
-            'regression_results/polity2_reg.html',
-            'regression_results/rpe_reg.html',
-            'regression_results/rpr_reg.html'
+            'regression_results/fe_basic_reg.html',
+            'regression_results/fe_democracy_reg.html',
+            'regression_results/fe_individualism_reg.html',
+            'regression_results/fe_polity2_reg.html',
+            'regression_results/fe_rpe_reg.html',
+            'regression_results/fe_rpr_reg.html',
+            'regression_results/ols_basic_reg.html',
+            'regression_results/ols_democracy_reg.html',
+            'regression_results/ols_individualism_reg.html',
+            'regression_results/ols_polity2_reg.html',
+            'regression_results/ols_rpe_reg.html',
+            'regression_results/ols_rpr_reg.html',
         },
     shell:
         'Rscript {input.script} {input.clean_data} > {output.regression_results}'
