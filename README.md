@@ -14,7 +14,7 @@ State capacity is measured by RPE and RPR from relative political capacity datas
 
 ## Remarks on the code
 
-You need install Python and R to run the code. The txt file packages_requirements.txt shows which R packages you need to run the project.
+You need to install Python and R to run the project. Additionally, the txt file packages_requirements.txt shows which R packages you need specifically.
 
 To run the project, please run the code "snakemake --cores 1 all" in the terminal that is opened into your project's directory.
 

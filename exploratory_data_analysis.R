@@ -130,7 +130,7 @@ g10 <- ggplot(data, aes(x = polity2, y = total_cases_per_million)) +
   geom_smooth() + 
   labs(y = 'total cases per million',
        x = 'autocracy-democracy index',
-       title = 'Relationship between covid cases and polity score') +
+       title = 'Relationship between covid cases and autocracy or democracy') +
   theme(plot.title = element_text(hjust = 0.5))
 ggsave('figures_tables/case_polity_pool.png',plot = g10, width = 8, height = 6, dpi = 300)
 
